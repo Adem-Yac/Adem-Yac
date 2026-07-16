@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ExternalLink, Flame, Plus, Store } from 'lucide-react';
+import { ExternalLink, Flame, Plus, Store, Truck } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -43,6 +43,18 @@ const projects: Project[] = [
     color: 'accent',
     liveUrl: 'https://bougie-beaute.vercel.app',
     detailsPath: '/projects/bougie-beaute',
+  },
+  {
+    slug: 'king-livraison',
+    title: 'King Livraison — Fleet & Livraisons',
+    description:
+      'Plateforme logistique (web + app mobile) : flotte de motos, GPS live, livraisons, RH, maintenance et revenus. Dashboard admin + app terrain pour le suivi en temps réel.',
+    icon: Truck,
+    technologies: ['React', 'Flutter', 'OpenStreetMap', 'GPS Live', 'API'],
+    category: 'Logistique',
+    color: 'secondary',
+    liveUrl: '',
+    detailsPath: '/projects/king-livraison',
   },
   {
     slug: 'next',
@@ -174,7 +186,7 @@ export default function Projects() {
             Mes <span className="text-gradient">Projets</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Mes deux boutiques e-commerce (pages détails + captures + lien live).
+            Boutiques e-commerce et plateforme logistique (web + app mobile) — détails, captures et stack.
           </p>
         </motion.div>
 

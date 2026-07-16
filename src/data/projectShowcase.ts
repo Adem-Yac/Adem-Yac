@@ -8,6 +8,14 @@ import bougieModal from "@/assets/projects/bougie/bougie-modal.png";
 import bougieProduct from "@/assets/projects/bougie/bougie-product.png";
 import bougieAdmin from "@/assets/projects/bougie/bougie-admin.png";
 
+import kingDashboard from "@/assets/projects/king-livraison/king-dashboard.png";
+import kingLivraisons from "@/assets/projects/king-livraison/king-livraisons.png";
+import kingGps from "@/assets/projects/king-livraison/king-gps.png";
+import kingFlotte from "@/assets/projects/king-livraison/king-flotte.png";
+import kingEmployes from "@/assets/projects/king-livraison/king-employes.png";
+import kingMaintenance from "@/assets/projects/king-livraison/king-maintenance.png";
+import kingSettings from "@/assets/projects/king-livraison/king-settings.png";
+
 export type ShowcaseProject = {
   slug: string;
   title: string;
@@ -62,9 +70,41 @@ export const showcaseProjects: ShowcaseProject[] = [
       { src: bougieAdmin, alt: "Admin — gestion produits" },
     ],
   },
+  {
+    slug: "king-livraison",
+    title: "King Livraison — Fleet & Livraisons",
+    subtitle: "Dashboard web + app mobile pour gérer flotte, GPS live et livraisons.",
+    description:
+      "King Livraison est une plateforme logistique complète : un back-office web pour le Super Admin / gestionnaire (flotte, commandes, RH, maintenance, revenus) et une application mobile Flutter pour le suivi terrain (aperçu flotte, livraisons, GPS live). La carte OpenStreetMap affiche les motos en temps réel (actif, en livraison, maintenance, hors service), avec filtres et recherche par matricule.",
+    highlights: [
+      "Dashboard flotte : KPIs motos actives, en livraison, maintenance, livreurs",
+      "GPS Live (OpenStreetMap) : positions, vitesse, alertes excès",
+      "Module livraisons : commandes, statuts (attente / en cours / livré), rapports",
+      "App mobile Flutter : Accueil, Livraison, GPS, Flotte, Paramètres",
+      "RH & maintenance : employés, interventions, pièces, alertes kilométrage",
+      "Thème clair/sombre + multi-langue (FR / EN / AR)",
+    ],
+    stack: [
+      "React",
+      "Flutter",
+      "OpenStreetMap / Leaflet",
+      "GPS temps réel",
+      "API REST",
+      "Dashboard Admin",
+    ],
+    liveUrl: "",
+    images: [
+      { src: kingDashboard, alt: "King Livraison — dashboard flotte + app mobile" },
+      { src: kingLivraisons, alt: "King Livraison — module livraisons (web + mobile)" },
+      { src: kingGps, alt: "King Livraison — GPS Live (carte OSM + mobile)" },
+      { src: kingFlotte, alt: "King Livraison — dashboard flotte" },
+      { src: kingEmployes, alt: "King Livraison — ajout d’un employé" },
+      { src: kingMaintenance, alt: "King Livraison — nouvelle intervention maintenance" },
+      { src: kingSettings, alt: "King Livraison — paramètres (langue, thème, session)" },
+    ],
+  },
 ];
 
 export function getShowcaseProject(slug: string): ShowcaseProject | undefined {
   return showcaseProjects.find((p) => p.slug === slug);
 }
-

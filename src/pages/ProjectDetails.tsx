@@ -47,13 +47,15 @@ export default function ProjectDetails() {
             </Link>
           </Button>
 
-          <Button
-            className="gradient-primary hover:scale-105 transition-smooth"
-            onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
-          >
-            <ExternalLink className="mr-2 h-4 w-4" />
-            Ouvrir le site
-          </Button>
+          {project.liveUrl ? (
+            <Button
+              className="gradient-primary hover:scale-105 transition-smooth"
+              onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Ouvrir le site
+            </Button>
+          ) : null}
         </div>
 
         <motion.div
@@ -136,21 +138,23 @@ export default function ProjectDetails() {
               ))}
             </div>
 
-            <Card className="glassmorphism shadow-card mt-8">
-              <CardHeader className="pb-3">
-                <CardTitle>Lien</CardTitle>
-              </CardHeader>
-              <CardContent className="flex items-center justify-between gap-3 flex-wrap">
-                <p className="text-muted-foreground break-all">{project.liveUrl}</p>
-                <Button
-                  className="gradient-primary"
-                  onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Visiter
-                </Button>
-              </CardContent>
-            </Card>
+            {project.liveUrl ? (
+              <Card className="glassmorphism shadow-card mt-8">
+                <CardHeader className="pb-3">
+                  <CardTitle>Lien</CardTitle>
+                </CardHeader>
+                <CardContent className="flex items-center justify-between gap-3 flex-wrap">
+                  <p className="text-muted-foreground break-all">{project.liveUrl}</p>
+                  <Button
+                    className="gradient-primary"
+                    onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Visiter
+                  </Button>
+                </CardContent>
+              </Card>
+            ) : null}
           </div>
         </div>
       </main>
